@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Dress-Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="main-container">
+        <header>
+            <h1>Virtual Dress-Up</h1>
+        </header>
+
+        <main>
+            <section id="upload-area">
+                <div class="upload-photo">
+                    <input type="file" class="photo-upload" accept="image/*">
+                    <p>Upload Your Full-Body Photo</p>
+                </div>
+
+                <div class="upload-clothing">
+                    <input type="file" class="clothing-upload" accept="image/*" multiple>
+                    <p>Upload Clothing Items</p>
+                </div>
+            </section>
+
+            <section id="display-area">
+                <img class="user-photo" src="images/Select image.png" id="mainImage" alt="Your Photo" />
+            </section>
+
+            <section id="actions">
+                <div class="slidecontainer">
+                    <label for="myRange">Resize Photo:</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <p>Value: <span id="demo"></span>%</p>
+                </div>
+
+                <div id="button-container">
+                    <button id="save-canvas">Save Outfit</button>
+                    <button id="resize-image">Resize Image</button>
+                    <button id="print" onclick="print()">Print</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Virtual Dress-Up</p>
+        </footer>
+    </div>
+
+    <script>
+        if (typeof(Storage) !== "undefined") {
+            alert('Storage available');
+        } else {
+            alert('No storage available');
+        }
+
+        window.onload = function() {
+            theSlider();
+        };
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
